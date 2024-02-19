@@ -9,9 +9,9 @@
     <title>Resources | @yield('title')</title>
 </head>
 
-<body>
+<body class="bg-[#09090A]">
 
-    <div class="wrapper">
+    <div class="wrapper ">
         @yield('content')
     </div>
 
