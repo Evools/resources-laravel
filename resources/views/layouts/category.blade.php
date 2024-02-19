@@ -4,7 +4,7 @@
     </li>
     @foreach ($categories as $category)
         <li>
-            <a href="/" class="hover:text-white transition">{{ $category->name }}</a>
+            <a href="/category/{{ $category->id }}" class="hover:text-white transition">{{ $category->name }}</a>
         </li>
     @endforeach
 </ul>
