@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <title>Document</title>
-</head>
+@section('title', 'Index')
 
-<body>
-    <h1 class="text-2xl text-red-500">Hello</h1>
-</body>
-
-</html>
+@section('content')
+    <div class="m-auto py-3 border-b border-slate-100 sticky top-0 bg-white">
+        @include('layouts.nav')
+    </div>
+    <div class="flex items-start gap-12 mt-4 max-w-[1280px] m-auto">
+        <div class=" sticky top-20">
+            @include('layouts.category')
+        </div>
+        @include('include.cards')
+    </div>
+@endsection
