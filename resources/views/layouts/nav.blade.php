@@ -13,8 +13,6 @@
         </a>
     </div>
     <div class="flex items-center gap-6">
-        <a href="/" class="text-[#9A9A9A] transition hover:text-white">Спонсоры</a>
-        <a href="/" class="text-[#9A9A9A] transition hover:text-white">Рассылка</a>
         <button id="addResourceModal" type="button"
             class="flex items-center gap-2 px-4 py-2 border
             border-stone-800 rounded-full text-white hover:bg-stone-800 transition">

@@ -30,19 +30,13 @@ function closeModal() {
 }
 document.getElementById('addResourceModal').addEventListener('click', openModal);
 document.getElementById('closeModalButton').addEventListener('click', closeModal);
-
-// Получаем кнопку и список
 var button = document.querySelector('button[aria-haspopup="listbox"]');
 var list = document.querySelector('ul[role="listbox"]');
-
-// Добавляем обработчик событий на кнопку для открытия и закрытия списка
 button.addEventListener('click', function () {
   var isExpanded = this.getAttribute('aria-expanded') === 'true';
   this.setAttribute('aria-expanded', !isExpanded);
   list.style.display = isExpanded ? 'none' : 'block';
 });
-
-// Добавляем обработчики событий на элементы списка для выбора элемента и закрытия списка
 var listItems = list.querySelectorAll('li');
 listItems.forEach(function (listItem) {
   listItem.addEventListener('click', function () {
@@ -50,6 +44,17 @@ listItems.forEach(function (listItem) {
     button.querySelector('.truncate').textContent = selectedText;
     button.setAttribute('aria-expanded', false);
     list.style.display = 'none';
+  });
+});
+document.querySelectorAll('li').forEach(function (li) {
+  li.addEventListener('click', function () {
+    document.querySelector('button span span').textContent = this.textContent;
+    document.querySelector('ul').classList.add('hidden');
+  });
+});
+document.querySelectorAll('li[role="option"]').forEach(function (item) {
+  item.addEventListener('click', function (event) {
+    document.getElementById('category_id').value = event.target.dataset.id;
   });
 });
 

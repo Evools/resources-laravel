@@ -6,12 +6,12 @@ use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class AdminController extends Controller
 {
     public function index()
     {
         $categories = Category::all();
-        $posts = Post::where('status', 'Опубликовано')->get();
-        return view('index', ['categories' => $categories, 'posts' => $posts]);
+        $posts = Post::all();
+        return view('admin.index', ['categories' => $categories, 'posts' => $posts]);
     }
 }

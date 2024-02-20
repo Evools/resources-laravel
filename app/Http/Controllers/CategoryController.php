@@ -8,9 +8,11 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function show(Category $category)
+    public function filter(Category $category)
     {
-        $posts = Post::where('category_id', $category->id)->get();
+        $posts = Post::where('category_id', $category->id)
+            ->where('status', 'Опубликовано')
+            ->get();
         $categories = Category::all();
         return view('index', ['posts' => $posts, 'categories' => $categories]);
     }
