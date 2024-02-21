@@ -41,7 +41,14 @@
                                     <label id="listbox-label"
                                         class="block text-sm font-medium leading-6 text-gray-900">Выбери
                                         категорию</label>
-                                    <div class="relative mt-2">
+                                    <select name="category_id" id="category_id">
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">
+                                                {{ $category->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    {{-- <div class="relative mt-2">
                                         <button type="button"
                                             class="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm sm:leading-6"
                                             aria-haspopup="listbox" aria-expanded="false"
@@ -73,7 +80,7 @@
                                                 });
                                             });
                                         </script>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                             <div class="flex flex-col-reverse sm:flex-row sm:space-x-2 sm:justify-start">
