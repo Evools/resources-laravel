@@ -43,9 +43,12 @@
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                 <tr>
                     <th scope="col" class="px-6 py-3">
+                        id
+                    </th>
+                    <th scope="col" class="px-6 py-3">
                         Название
                     </th>
-                    <th scope="col" class="px-6 py-3 w-[400px]">
+                    <th scope="col" class="px-6 py-3 w-[300px]">
                         Описание
                     </th>
                     <th scope="col" class="px-6 py-3">
@@ -65,6 +68,9 @@
                 <tbody>
                 @foreach($posts as $post)
                     <tr class="bg-white border-b">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                            {{ $post->id }}
+                        </th>
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                             {{ $post->name }}
                         </th>
@@ -121,6 +127,9 @@
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                 <tr>
                     <th scope="col" class="px-6 py-3">
+                        id
+                    </th>
+                    <th scope="col" class="px-6 py-3">
                         Название категории
                     </th>
                     <th scope="col" class="px-6 py-3">
@@ -131,6 +140,9 @@
                 <tbody>
                 @foreach($categories as $category)
                     <tr class="bg-white border-b">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                            {{ $category->id }}
+                        </th>
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                             {{ $category->name }}
                         </th>

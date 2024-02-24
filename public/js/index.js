@@ -28,21 +28,19 @@ function closeModal() {
   var modal = document.getElementById('modal');
   modal.classList.add('hidden');
 }
-document.getElementById('addResourceModal').addEventListener('click', openModal);
-document.getElementById('closeModalButton').addEventListener('click', closeModal);
-document.querySelectorAll('li[role="option"]').forEach(function (item) {
-  item.addEventListener('click', function (event) {
-    document.getElementById('category_id').value = event.target.dataset.id;
+if (document.getElementById('addResourceModal')) {
+  document.getElementById('addResourceModal').addEventListener('click', openModal);
+  document.getElementById('closeModalButton').addEventListener('click', closeModal);
+  document.querySelectorAll('li[role="option"]').forEach(function (item) {
+    item.addEventListener('click', function (event) {
+      document.getElementById('category_id').value = event.target.dataset.id;
+    });
   });
-});
-
-// Получаем ссылки на кнопки табов и соответствующие разделы
+}
 var resourcesButton = document.getElementById('resourcesButton');
 var categoriesButton = document.getElementById('categoriesButton');
 var resourcesSection = document.getElementById('resourcesSection');
 var categoriesSection = document.getElementById('categoriesSection');
-
-// Функция для отображения раздела ресурсов и скрытия раздела категорий
 function showResourcesSection() {
   resourcesButton.classList.add('border-white');
   resourcesButton.classList.remove('border-transparent', 'hover:text-gray-600', 'hover:border-gray-300', 'dark:hover:text-gray-300');
@@ -51,8 +49,6 @@ function showResourcesSection() {
   resourcesSection.style.display = 'block';
   categoriesSection.style.display = 'none';
 }
-
-// Функция для отображения раздела категорий и скрытия раздела ресурсов
 function showCategoriesSection() {
   categoriesButton.classList.add('border-white');
   categoriesButton.classList.remove('border-transparent', 'hover:text-gray-600', 'hover:border-gray-300', 'dark:hover:text-gray-300');
@@ -61,12 +57,8 @@ function showCategoriesSection() {
   categoriesSection.style.display = 'block';
   resourcesSection.style.display = 'none';
 }
-
-// Назначаем обработчики событий на кнопки табов
 resourcesButton.addEventListener('click', showResourcesSection);
 categoriesButton.addEventListener('click', showCategoriesSection);
-
-// По умолчанию показываем раздел ресурсов
 showResourcesSection();
 
 /***/ })
