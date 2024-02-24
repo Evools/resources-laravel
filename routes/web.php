@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,20 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/category/{category}', [CategoryController::class, 'filter'])->name('category');
 
 Route::get('/admin', fn() => app(AdminController::class)->index())->middleware('auth')->name('admin');
+
+Route::get('/admin/view-resource/{id}', function($id) {
+    return app(AdminController::class)->viewResource($id);
+})->middleware('auth')->name('view-resource');
+
+Route::post('/admin/savePost', function (Request $request) {
+    return app(\App\Http\Controllers\AdminController::class)->savePost($request);
+})->middleware('auth')->name('savePost');
+Route::post('/admin/deletePost/{id}', function($id) {
+    return app(\App\Http\Controllers\AdminController::class)->deletePost($id);
+})->middleware('auth')->name('deletePost');
+
+Route::get('/admin/add-resource', fn() => app(AdminController::class)->addResource())->middleware('auth')->name('add-resource');
+
 
 Route::post('/submit-resource', [PostController::class, 'store']);
 

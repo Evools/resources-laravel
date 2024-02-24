@@ -13,14 +13,14 @@
         </a>
     </div>
     <div class="flex items-center gap-2">
-        @guest
+{{--        @guest--}}
             <button id="addResourceModal" type="button"
                     class="flex items-center gap-2 px-4 py-2 border
             border-stone-800 rounded-full text-white hover:bg-stone-800 transition">
                 Добавить ресурс
                 <span>→</span>
             </button>
-        @endguest
+{{--        @endguest--}}
         @auth
 {{--            <p class="text-lg text-white">Добро пожаловать: <span class="font-bold">{{ auth()->user()->email  }}</span> </p>--}}
             <div class="flex items-center gap-2">

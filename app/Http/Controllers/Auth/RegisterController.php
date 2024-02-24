@@ -32,6 +32,5 @@ class RegisterController extends Controller
 
         FacadesAuth::login($user);
         return redirect(RouteServiceProvider::HOME);
-        // dd($request->all());
     }
 }
