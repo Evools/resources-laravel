@@ -19,7 +19,6 @@ if(document.getElementById('addResourceModal')){
 }
 
 
-
 const resourcesButton = document.getElementById('resourcesButton');
 const categoriesButton = document.getElementById('categoriesButton');
 const resourcesSection = document.getElementById('resourcesSection');
